@@ -54,7 +54,6 @@ class Influencer(db.Model):
     instagram_link = db.Column(db.String(200))
     twitter_link = db.Column(db.String(200))
     youtube_link = db.Column(db.String(200))
-    # ... other fields you want to add
 
     def __repr__(self):
         return '<Influencer %r>' % self.user.username
@@ -74,7 +73,6 @@ class Brand(db.Model):
     
     verified = db.Column(db.Boolean, default=False)
 
-    # ... other fields you want to add
 
     def __repr__(self):
         return '<Brand %r>' % self.name
@@ -95,7 +93,6 @@ class Campaign(db.Model):
     private = db.Column(db.Boolean, default=False)
     proposals = db.relationship('Proposal', backref='campaign', cascade="all, delete-orphan") 
 
-    # ... other fields you want to add
 
     def __repr__(self):
         return '<Campaign %r>' % self.title
@@ -112,7 +109,6 @@ class Proposal(db.Model):
     bid_amount = db.Column(db.Float)
     proposed_by = db.Column(db.String(50))
     chat_messages = db.relationship('ChatMessage', backref='proposal', cascade="all, delete-orphan")
-    # ... other fields you want to add
 
 
 
